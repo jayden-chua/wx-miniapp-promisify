@@ -12,8 +12,8 @@
 ## 如何在微信小程序中通过 npm 安装 wx-miniapp-promisify
 1. 转到您的微信小程序文件夹并运行 `npm install wx-miniapp-promisify`.
 2. 在您的微信开发者工具中，请确保以下内容：
-    1. 在 “设置 > 项目设置” 中，确保 “ES6 转 ES5” 和 “使用 npm 模块” 的选项被选中。
-    2. 在 “工具” 中，点击 “构建NPM”。
+    1. 在“设置 > 项目设置”中，确保“ES6转ES5”和“使用npm模块”的选项被选中。
+    2. 在“工具” 中，点击“构建NPM”。
 
 ## 如何在微信小程序中使用 wx-miniapp-promisify
 1. 使用 `import` 或 `require` 语句将库引入到代码中.
