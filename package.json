@@ -1,6 +1,6 @@
 {
     "name": "wx-miniapp-promisify",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A simple Promise wrapper for WeChat MiniApp | 简单用于小程序常用的异步方法 Promise 包装器",
     "license": "MIT",
     "repository": "jayden-chua/wx-miniapp-promisify",
