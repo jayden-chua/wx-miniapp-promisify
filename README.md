@@ -17,7 +17,7 @@ Read this in other languages: [English](README.md), [简体中文](README.zh-cn.
 
 ## How to use wx-miniapp-promisify
 1. Using `import` or `require` statements to include the library into your code.
-```
+```js
 // Example with "import" syntax in page/index.js
 
 import wxPromise from 'wx-miniapp-promisify';
