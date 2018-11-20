@@ -17,7 +17,7 @@
 
 ## 如何在微信小程序中使用 wx-miniapp-promisify
 1. 使用 `import` 或 `require` 语句将库引入到代码中.
-```
+```js
 // 在 “page/index.js” 中使用 “import” 语法示例
 
 import wxPromise from 'wx-miniapp-promisify';
@@ -27,7 +27,7 @@ import wxPromise from 'wx-miniapp-promisify';
 let wxPromise = require('wx-miniapp-promisify');
 ```
 2. `wx-miniapp-promisify` 的方法跟在 `wx` 异步方法大致是一致的。
-```
+```js
 // 使用单纯 "wx.request" 的示例
 
 let normalResponse = wx.request({
