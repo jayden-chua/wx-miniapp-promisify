@@ -28,7 +28,7 @@ import wxPromise from 'wx-miniapp-promisify';
 let wxPromise = require('wx-miniapp-promisify');
 ```
 2. `wx-miniapp-promisify` functions are a replica of `wx` async functions.
-```
+```js
 // Example code for a "normal wx.request"
 
 let normalResponse = wx.request({
