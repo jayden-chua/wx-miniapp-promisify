@@ -1,15 +1,26 @@
 {
-    "name": "wx-miniapp-promisify",
-    "version": "0.0.3",
-    "description": "A simple Promise wrapper for WeChat MiniApp | 简单用于小程序常用的异步方法 Promise 包装器",
-    "license": "MIT",
-    "repository": "jayden-chua/wx-miniapp-promisify",
-    "main": "index.js",
-    "keywords": [
-        "wx-miniapp-promisify",
-        "wechat",
-        "miniapp",
-        "promisify",
-        "promise"
-    ]
+  "name": "wx-miniapp-promisify",
+  "version": "0.0.3",
+  "description": "A simple Promise wrapper for WeChat MiniApp | 简单用于小程序常用的异步方法 Promise 包装器",
+  "license": "MIT",
+  "repository": "jayden-chua/wx-miniapp-promisify",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "wx-miniapp-promisify",
+    "wechat",
+    "miniapp",
+    "promisify",
+    "promise"
+  ],
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
 }
