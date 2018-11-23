@@ -13,6 +13,7 @@
     "test": "cross-env NODE_ENV=test nyc mocha",
     "lint": "eslint src",
     "watch:test": "mocha --watch",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
     "validate": "npm-run-all --parallel lint test build"
   },
   "keywords": [
@@ -33,6 +34,7 @@
     "babel-register": "6.26.0",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
+    "codecov": "3.1.0",
     "cross-env": "5.2.0",
     "eslint": "5.9.0",
     "eslint-config-standard": "12.0.0",
@@ -47,7 +49,7 @@
     "nyc": "13.1.0",
     "rewire": "4.0.1",
     "rimraf": "2.6.2",
-    "sinon": "^7.1.1",
+    "sinon": "7.1.1",
     "webpack": "1.13.1"
   },
   "nyc": {
