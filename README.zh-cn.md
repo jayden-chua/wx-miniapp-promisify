@@ -1,4 +1,6 @@
 # Wechat Miniapp Promisify
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](./LICENSE) [![Coverage Status](https://img.shields.io/codecov/c/github/jayden-chua/wx-miniapp-promisify/master.svg?style=for-the-badge)](https://codecov.io/gh/jayden-chua/wx-miniapp-promisify) [![TravisCI](https://img.shields.io/travis/jayden-chua/wx-miniapp-promisify/master.svg?style=for-the-badge)](https://travis-ci.org/jayden-chua/wx-miniapp-promisify)
+
 其他语言版本: [English](README.md), [简体中文](README.zh-cn.md)
 
 `wx-miniapp-promisify` 是一个简单的包装器，返回最常用的 wx 异步功能作为 `Promise` 对象。这个库只应在微信小程序中使用。

@@ -1,4 +1,6 @@
 # Wechat Miniapp Promisify
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](./LICENSE) [![Coverage Status](https://img.shields.io/codecov/c/github/jayden-chua/wx-miniapp-promisify/master.svg?style=for-the-badge)](https://codecov.io/gh/jayden-chua/wx-miniapp-promisify) [![TravisCI](https://img.shields.io/travis/jayden-chua/wx-miniapp-promisify/master.svg?style=for-the-badge)](https://travis-ci.org/jayden-chua/wx-miniapp-promisify)
+
 Read this in other languages: [English](README.md), [简体中文](README.zh-cn.md)
 
 `wx-miniapp-promisify` is a simple wrapper to return the most commonly used wx async functions as Promises. This library should only be used in a WeChat miniapp.
