@@ -1,6 +1,6 @@
 {
   "name": "wx-miniapp-promisify",
-  "version": "0.0.3",
+  "version": "0.0.0-semantically-released",
   "description": "A simple Promise wrapper for WeChat MiniApp | 简单用于小程序常用的异步方法 Promise 包装器",
   "license": "MIT",
   "repository": "jayden-chua/wx-miniapp-promisify",
@@ -14,7 +14,9 @@
     "lint": "eslint src",
     "watch:test": "mocha --watch",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "validate": "npm-run-all --parallel lint test build"
+    "validate": "npm-run-all --parallel lint test build",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "wx-miniapp-promisify",
@@ -35,7 +37,9 @@
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "codecov": "3.1.0",
+    "commitizen": "3.0.4",
     "cross-env": "5.2.0",
+    "cz-conventional-changelog": "2.1.0",
     "eslint": "5.9.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "2.14.0",
@@ -49,7 +53,10 @@
     "nyc": "13.1.0",
     "rewire": "4.0.1",
     "rimraf": "2.6.2",
+    "semantic-release": "15.12.1",
     "sinon": "7.1.1",
+    "travis-deploy-once": "5.0.9",
+    "validate-commit-msg": "2.14.0",
     "webpack": "1.13.1"
   },
   "nyc": {
@@ -84,8 +91,12 @@
     }
   },
   "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
     "ghooks": {
-      "pre-commit": "npm run validate"
+      "pre-commit": "npm run validate",
+      "commit-msg": "validate-commit-msg"
     }
   }
 }
