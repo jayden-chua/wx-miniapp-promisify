@@ -22,7 +22,7 @@ describe('wx-miniapp-promisify', () => {
     expect(wxPromisify.isPromisable('downloadFile')).to.be.true;
   });
 
-  it('second test', () => {
+  it('should resolve and reject a promise', () => {
     let callback = sinon.spy();
     let callback2 = sinon.spy();
     let params = {
