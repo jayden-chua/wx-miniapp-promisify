@@ -1,15 +1,89 @@
 {
-    "name": "wx-miniapp-promisify",
-    "version": "0.0.3",
-    "description": "A simple Promise wrapper for WeChat MiniApp | 简单用于小程序常用的异步方法 Promise 包装器",
-    "license": "MIT",
-    "repository": "jayden-chua/wx-miniapp-promisify",
-    "main": "index.js",
-    "keywords": [
-        "wx-miniapp-promisify",
-        "wechat",
-        "miniapp",
-        "promisify",
-        "promise"
+  "name": "wx-miniapp-promisify",
+  "version": "0.0.3",
+  "description": "A simple Promise wrapper for WeChat MiniApp | 简单用于小程序常用的异步方法 Promise 包装器",
+  "license": "MIT",
+  "repository": "jayden-chua/wx-miniapp-promisify",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
+    "build:umd": "webpack --output-filename index.umd.js",
+    "test": "cross-env NODE_ENV=test nyc mocha",
+    "lint": "eslint src",
+    "watch:test": "mocha --watch",
+    "validate": "npm-run-all --parallel lint test build"
+  },
+  "keywords": [
+    "wx-miniapp-promisify",
+    "wechat",
+    "miniapp",
+    "promisify",
+    "promise"
+  ],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-loader": "6.2.4",
+    "babel-plugin-istanbul": "5.1.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-register": "6.26.0",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "cross-env": "5.2.0",
+    "eslint": "5.9.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "8.0.0",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "ghooks": "2.0.4",
+    "json-loader": "0.5.4",
+    "mocha": "5.2.0",
+    "npm-run-all": "4.1.3",
+    "nyc": "13.1.0",
+    "rewire": "4.0.1",
+    "rimraf": "2.6.2",
+    "sinon": "^7.1.1",
+    "webpack": "1.13.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100,
+    "statements": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "instrument": false,
+    "sourceMap": false,
+    "require": [
+      "babel-register"
+    ],
+    "include": [
+      "src"
     ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "istanbul"
+        ]
+      }
+    }
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run validate"
+    }
+  }
 }
