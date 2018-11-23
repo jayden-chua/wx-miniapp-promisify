@@ -1,6 +1,6 @@
 'use strict';
 
-let wxAsyncFnNames = [
+const wxAsyncFnNames = [
   'downloadFile', // https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html
   'request', // https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html
   'uploadFile', // https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/wx.uploadFile.html
@@ -145,34 +145,38 @@ let wxAsyncFnNames = [
   'getSystemInfo' // https://developers.weixin.qq.com/miniprogram/dev/api/system/system-info/wx.getSystemInfo.html
 ];
 
-module.exports = {};
-
-module.exports.isPromisable = fnName => {
+module.exports.isPromisable = function (fnName) {
   return wxAsyncFnNames.includes(fnName);
 };
 
-for (let fnName of wxAsyncFnNames) {
-  if (!window.wx[fnName]) { continue; }
+function setFunctions () {
+  for (let fnName of wxAsyncFnNames) {
+    if (!wx[fnName]) {
+      continue;
+    }
 
-  module.exports[fnName] = params => {
-    return new Promise((resolve, reject) => {
-      window.wx[fnName](addResolver(params, resolve, reject));
-    });
-  };
+    module.exports[fnName] = function (params) {
+      return new Promise(function (resolve, reject) {
+        wx[fnName](addResolver(params, resolve, reject));
+      });
+    };
+  }
 }
 
 function addResolver (params, resolve, reject) {
-  let newParms = Object.assign({}, params);
+  const newParms = Object.assign({}, params);
 
-  newParms.success = (response) => {
+  newParms.success = function (response) {
     params.success && params.success(response);
     resolve(response);
   };
 
-  newParms.fail = (response) => {
+  newParms.fail = function (response) {
     params.fail && params.fail(response);
     reject(response);
   };
 
   return newParms;
 }
+
+setFunctions();
